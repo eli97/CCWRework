@@ -1,0 +1,82 @@
+Index: scripts/header.js
+===================================================================
+diff --git a/scripts/header.js b/scripts/header.js
+--- a/scripts/header.js	
++++ b/scripts/header.js	
+@@ -26,7 +26,7 @@
+                     <ul>
+                         <li class="nav-item"><a href="#">Home</a></li>
+                         <li class="nav-item"><a href="../pages/services.html">Estimates</a></li>
+-                        <li class="nav-item"><a href="#">Contact Us</a></li>
++                        <li class="nav-item"><a href="../pages/contact.html">Contact Us</a></li>
+                         <li class="nav-item"><a href="../pages/signup.html">Login</a></li>
+                     </ul>
+ 
+Index: styles/styles.css
+===================================================================
+diff --git a/styles/styles.css b/styles/styles.css
+--- a/styles/styles.css	
++++ b/styles/styles.css	
+@@ -3,15 +3,19 @@
+ /*****************************/
+ 
+     :root {
++        /*Dark mode */
+         --near-white: rgb(251, 251, 254);
+         --light-gray: rgb(149, 149, 149);
+         --medium-gray: rgb(66, 65, 77);
+         --dark-gray: rgb(43, 42, 51);
+-
++        --dark-mode-icon: url("../images/moon.png");
++        
++        /*Light mode */
+         --light-blue: rgb(179, 229, 255);
+         --medium-blue: rgb(25, 179, 255);
+         --dark-blue: rgb(0, 89, 179);
+         --black-blue: rgb(2, 22, 43);
++        --light-mode-icon: url("../images/sun.png");
+     }
+ 
+     /*
+@@ -47,7 +51,7 @@
+         --accent: var(--light-gray);
+         --text: var(--near-white);
+         --selection: var(--medium-gray);
+-        --contrast-icon: url("../images/moon.png");
++        --contrast-icon: var(--dark-mode-icon);
+     }
+ 
+     body {
+@@ -56,7 +60,7 @@
+         --accent: var(--dark-blue);
+         --text: var(--black-blue);
+         --selection: var(--medium-blue);
+-        --contrast-icon: var("../images/sun.png");
++        --contrast-icon: var(--light-mode-icon);
+ 
+         padding-bottom: 80px;
+     }
+@@ -379,7 +383,8 @@
+ 
+     footer{
+         overflow: hidden;
+-        background-image: linear-gradient( var(--accent), var(--background) );
++        /* background-image: linear-gradient( var(--accent), var(--background) ); */
++        background-color: var(--accent );
+ 
+         position: fixed;
+         bottom: 0;
+Index: scripts/footer.js
+===================================================================
+diff --git a/scripts/footer.js b/scripts/footer.js
+--- a/scripts/footer.js	
++++ b/scripts/footer.js	
+@@ -10,7 +10,7 @@
+                 <h2>
+                     Sacramento, California 95825 <br/>
+                     email: <a href = "mailto: no-reply@email.com">no-reply@email.com</a><br/>
+-                    phone: (555) 123-4567
++                    phone: (916) 877-5488
+                 </h2>
+             </div>
+         </footer>
